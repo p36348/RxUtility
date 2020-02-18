@@ -3,5 +3,5 @@
 **Install:**
 
 ```ruby
-pod 'PTBaseKit', :git => 'https://github.com/p36348/RxUtility.git'
+pod 'RxUtility', :git => 'https://github.com/p36348/RxUtility.git'
 ```
