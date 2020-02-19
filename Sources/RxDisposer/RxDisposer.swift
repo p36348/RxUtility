@@ -14,6 +14,16 @@ public protocol RxDisposer {
     func disposeAll()
 }
 
+extension RxDisposer {
+    public func dispose(identifier: String = DisposableController.DisposeIdentifiers.default) {
+        self.disposableController.dispose(identifier: identifier)
+    }
+    
+    public func disposeAll() {
+        self.disposableController.disposeAll()
+    }
+}
+
 private var dcKey = ""
 
 extension NSObject: RxDisposer {
@@ -30,14 +40,6 @@ extension NSObject: RxDisposer {
             }
             return val
         }
-    }
-    
-    public func dispose(identifier: String = DisposableController.DisposeIdentifiers.default) {
-        self.disposableController.dispose(identifier: identifier)
-    }
-    
-    public func disposeAll() {
-        self.disposableController.disposeAll()
     }
 }
 

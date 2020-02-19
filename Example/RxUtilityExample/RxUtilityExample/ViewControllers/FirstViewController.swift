@@ -22,14 +22,11 @@ class FirstViewController: UIViewController {
             })
             .disposed(by: vc)
         
-        /*
-         vc.rx.viewDidAppear
-             .flatMap {
-                 $0.rx.dismiss()
-         }
-         .subscribe()
-         .disposed(by: vc)
-         */
+        vc.rx.viewWillDisappear
+            .subscribe(onNext: { (_vc) in
+                debugPrint("tmp vc will disappear")
+            })
+            .disposed(by: vc)
         
         vc.rx.onDealloc
             .subscribe(onNext: { (_vc) in
@@ -40,6 +37,12 @@ class FirstViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
             self.present(vc, animated: true, completion: nil)
         })
+        
+        UIApplication.rx.willEnterForeground
+            .subscribe(onNext: {
+                debugPrint("application will enter foreground")
+            })
+            .disposed(by: self)
     }
 }
 

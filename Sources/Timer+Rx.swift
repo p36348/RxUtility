@@ -16,7 +16,7 @@ extension Reactive where Base: Timer {
         
         return
             Observable.create { (observer) -> Disposable in
-
+                
                 timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: repeats, block: { val in
                     observer.onNext(val)
                 })
@@ -26,8 +26,8 @@ extension Reactive where Base: Timer {
                 return Disposables.create()
             }
             .do(onDispose: {
-                    debugPrint("timer on dispose")
-                    timer?.invalidate()
+                timer?.invalidate()
+                timer = nil
             })
     }
 }

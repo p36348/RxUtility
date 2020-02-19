@@ -9,19 +9,17 @@
 import RxCocoa
 import RxSwift
 
-extension UIViewController {
-    
-    /// UIViewController的生命周期事件
-    public enum LifeCycleEvent {
-        case viewDidLoad, viewWillAppear, viewDidAppear, viewWillDisappear, viewDidDisappear, dealloc
-    }
-}
 
 extension Reactive where Base: UIViewController {
+    
+    private enum LifeCycleEvent {
+        case viewDidLoad, viewWillAppear, viewDidAppear, viewWillDisappear, viewDidDisappear, dealloc
+    }
+    
     /// 用于获取生命周期事件的observable
     ///
     /// - Parameter lifeCycleEvent: 生命周期事件
-    public func controlEvent(with lifeCycleEvent: UIViewController.LifeCycleEvent) -> Observable<Base?> {
+    private func controlEvent(with lifeCycleEvent: LifeCycleEvent) -> Observable<Base?> {
        
         let selector: Selector
         
@@ -44,6 +42,9 @@ extension Reactive where Base: UIViewController {
         
         return  sentMessage(selector).map({[weak _base] _ in _base})
     }
+}
+
+extension Reactive where Base: UIViewController {
     
     public var viewDidLoad: Observable<Base> {
         return controlEvent(with: .viewDidLoad).map {$0!}
@@ -74,9 +75,10 @@ extension Reactive where Base: UIViewController {
 extension Reactive where Base: UIViewController {
     
     public func present(viewController: UIViewController) -> Observable<Base> {
-        return Observable.create({  (observer) -> Disposable in
-            self.base.present(viewController, animated: true, completion: {
-                observer.onNext(self.base)
+        
+        return Observable.create({ [unowned base] (observer) -> Disposable in
+            base.present(viewController, animated: true, completion: {
+                observer.onNext(base)
                 observer.onCompleted()
             })
             return Disposables.create()
@@ -84,9 +86,9 @@ extension Reactive where Base: UIViewController {
     }
     
     public func dismiss() -> Observable<Base> {
-        return Observable.create({ (observer) -> Disposable in
-            self.base.dismiss(animated: true, completion: {
-                observer.onNext(self.base)
+        return Observable.create({ [unowned base] (observer) -> Disposable in
+            base.dismiss(animated: true, completion: {
+                observer.onNext(base)
                 observer.onCompleted()
             })
             return Disposables.create()

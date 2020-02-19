@@ -18,8 +18,11 @@
 		951C989F23FC3DCB00F6339D /* Timer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C989E23FC3DCB00F6339D /* Timer+Rx.swift */; };
 		951C98A123FC496A00F6339D /* DisposableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C98A023FC496A00F6339D /* DisposableController.swift */; };
 		951C98A823FC4BCF00F6339D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C98A523FC4BCF00F6339D /* FirstViewController.swift */; };
-		951C98A923FC4BCF00F6339D /* TemporaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C98A623FC4BCF00F6339D /* TemporaryViewController.swift */; };
 		951C98AA23FC4BCF00F6339D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C98A723FC4BCF00F6339D /* SecondViewController.swift */; };
+		951C98AC23FD075F00F6339D /* UITextField+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C98AB23FD075F00F6339D /* UITextField+Rx.swift */; };
+		951C98AE23FD267B00F6339D /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C98AD23FD267B00F6339D /* UIApplication+Rx.swift */; };
+		951C98B523FD469700F6339D /* TemporaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C98B323FD469700F6339D /* TemporaryViewController.swift */; };
+		951C98B623FD469700F6339D /* TemporaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951C98B423FD469700F6339D /* TemporaryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +40,11 @@
 		951C989E23FC3DCB00F6339D /* Timer+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+Rx.swift"; sourceTree = "<group>"; };
 		951C98A023FC496A00F6339D /* DisposableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableController.swift; sourceTree = "<group>"; };
 		951C98A523FC4BCF00F6339D /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		951C98A623FC4BCF00F6339D /* TemporaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryViewController.swift; sourceTree = "<group>"; };
 		951C98A723FC4BCF00F6339D /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		951C98AB23FD075F00F6339D /* UITextField+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Rx.swift"; sourceTree = "<group>"; };
+		951C98AD23FD267B00F6339D /* UIApplication+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
+		951C98B323FD469700F6339D /* TemporaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryViewController.swift; sourceTree = "<group>"; };
+		951C98B423FD469700F6339D /* TemporaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemporaryViewController.xib; sourceTree = "<group>"; };
 		D75F82E27A7F4D51FB9D8FFA /* Pods_RxUtilityExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxUtilityExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -109,6 +115,8 @@
 			children = (
 				951C989B23FC3CC400F6339D /* RxDisposer */,
 				951C989C23FC3D2E00F6339D /* UIViewController+Rx.swift */,
+				951C98AD23FD267B00F6339D /* UIApplication+Rx.swift */,
+				951C98AB23FD075F00F6339D /* UITextField+Rx.swift */,
 				951C989E23FC3DCB00F6339D /* Timer+Rx.swift */,
 			);
 			name = Sources;
@@ -129,7 +137,8 @@
 			children = (
 				951C98A523FC4BCF00F6339D /* FirstViewController.swift */,
 				951C98A723FC4BCF00F6339D /* SecondViewController.swift */,
-				951C98A623FC4BCF00F6339D /* TemporaryViewController.swift */,
+				951C98B323FD469700F6339D /* TemporaryViewController.swift */,
+				951C98B423FD469700F6339D /* TemporaryViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -195,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				951C987C23FC39FB00F6339D /* LaunchScreen.storyboard in Resources */,
+				951C98B623FD469700F6339D /* TemporaryViewController.xib in Resources */,
 				951C987923FC39FB00F6339D /* Assets.xcassets in Resources */,
 				951C987723FC39FB00F6339D /* Main.storyboard in Resources */,
 			);
@@ -251,12 +261,14 @@
 			files = (
 				951C989A23FC3CBD00F6339D /* RxDisposer.swift in Sources */,
 				951C986E23FC39FB00F6339D /* AppDelegate.swift in Sources */,
-				951C98A923FC4BCF00F6339D /* TemporaryViewController.swift in Sources */,
+				951C98AC23FD075F00F6339D /* UITextField+Rx.swift in Sources */,
+				951C98AE23FD267B00F6339D /* UIApplication+Rx.swift in Sources */,
 				951C98AA23FC4BCF00F6339D /* SecondViewController.swift in Sources */,
 				951C989F23FC3DCB00F6339D /* Timer+Rx.swift in Sources */,
 				951C989D23FC3D2E00F6339D /* UIViewController+Rx.swift in Sources */,
 				951C987023FC39FB00F6339D /* SceneDelegate.swift in Sources */,
 				951C98A123FC496A00F6339D /* DisposableController.swift in Sources */,
+				951C98B523FD469700F6339D /* TemporaryViewController.swift in Sources */,
 				951C98A823FC4BCF00F6339D /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
