@@ -6,6 +6,5 @@ target 'RxUtilityExample' do
   use_frameworks!
 
   # Pods for RxUtilityExample
-  pod 'RxCocoa', '~> 4.5'
-  pod 'RxSwift', '~> 4.5'
+  pod 'RxUtility', path: './../../'
 end

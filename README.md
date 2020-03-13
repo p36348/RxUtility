@@ -17,6 +17,7 @@ pod 'RxUtility', :git => 'https://github.com/p36348/RxUtility.git'
 - UIKit组件的Delegate回调
   - [x] UITextField
   - [ ] 更多UIKit组件...
+
 ## 使用
 
 **应用生命周期**
@@ -92,4 +93,3 @@ Timer.rx.scheduled(timeInterval: 1, repeats: true, mode: .common)
 		debugPrint("timer called")
 	})
 ```
-

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "RxUtility"
-  s.version          = "0.1"
+  s.version          = "0.1.0"
   s.summary          = "RxSwift component develop kit"
   s.description      = <<-DESC
 To be filled
@@ -18,7 +18,6 @@ To be filled
   s.tvos.deployment_target = '9.0'
 
   s.source_files          = 'Sources/**/*.swift', 'Platform/**/*.swift'
-#   s.exclude_files         = 'Sources/??/**/*.swift'
 
   s.dependency 'RxSwift', '>=4.5'
   s.dependency 'RxCocoa', '>=4.5'
